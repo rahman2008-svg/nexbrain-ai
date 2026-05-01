@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "পানি",
+    "content": "পানি হলো H2O দ্বারা গঠিত একটি রাসায়নিক পদার্থ। এটি জীবনধারণের জন্য অপরিহার্য।",
+    "tags": ["science", "water"]
+  },
+  {
+    "id": 2,
+    "title": "Python",
+    "content": "Python একটি জনপ্রিয় প্রোগ্রামিং ভাষা যা AI, web এবং automation এ ব্যবহৃত হয়।",
+    "tags": ["programming", "language"]
+  }
+]
