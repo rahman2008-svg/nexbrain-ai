@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify
+
 from core.engine import rank
-from core.index import build_index
+from core.indexer import build_index   # ✅ FIXED import
 import json
 
 app = Flask(__name__)
 
-# load data
 with open("data/db.json", "r", encoding="utf-8") as f:
     db = json.load(f)
 
@@ -32,4 +32,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=10000)
