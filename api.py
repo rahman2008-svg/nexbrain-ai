@@ -13,7 +13,7 @@ with open("data/db.json", "r", encoding="utf-8") as f:
 index = build_index(db)
 
 
-# 🌐 AI API
+# 🤖 CHAT API
 @app.route("/chat", methods=["POST"])
 def chat():
     data = request.json
@@ -22,30 +22,46 @@ def chat():
     result, score = rank(query, db, index)
 
     return jsonify({
-        "answer": result["content"],
         "title": result["title"],
+        "answer": result["content"],
         "score": score
     })
 
 
-# 🧠 simple home
+# 🌐 ROOT = UI (MAIN FIX)
 @app.route("/")
 def home():
-    return "NexBrain AI is running"
-
-
-# 🌐 SIMPLE WEB UI
-@app.route("/ui")
-def ui():
     return """
     <html>
     <head>
         <title>NexBrain AI</title>
         <style>
-            body { font-family: Arial; text-align:center; margin-top:50px; }
-            input { padding:10px; width:250px; }
-            button { padding:10px; }
-            #out { margin-top:20px; font-size:18px; }
+            body {
+                font-family: Arial;
+                text-align: center;
+                margin-top: 50px;
+                background: #f5f5f5;
+            }
+            input {
+                padding: 10px;
+                width: 250px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+            button {
+                padding: 10px;
+                margin-left: 5px;
+                border-radius: 5px;
+                border: none;
+                background: #333;
+                color: white;
+                cursor: pointer;
+            }
+            #out {
+                margin-top: 20px;
+                font-size: 18px;
+                white-space: pre-wrap;
+            }
         </style>
     </head>
     <body>
